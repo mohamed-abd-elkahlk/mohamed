@@ -41,14 +41,16 @@ export default function Work() {
                 {project.category} project
               </h2>
               <p className="text-white/60">{project.description}</p>
-              <ul className="flex gap-4">
-                {project.stack.map((item, index) => (
-                  <li key={index} className="text-xl text-accent">
-                    {item.name}
-                    {index !== project.stack.length - 1 ? "," : ""}
-                  </li>
-                ))}
-              </ul>
+              <div className="flex gap-4">
+                <p>
+                  {project.stack.map((item, index) => (
+                    <span key={index} className="text-xl text-accent">
+                      {item.name}
+                      {index !== project.stack.length - 1 ? "," : ""}
+                    </span>
+                  ))}
+                </p>
+              </div>
               <div className="border border-white/20" />
               <div className="flex gap-4 items-center">
                 <Link href={project.live} target="_blank">

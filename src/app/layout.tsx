@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
-import PageTranstion from "@/components/animation/PageTranstion";
 import { Toaster } from "@/components/ui/toaster";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -25,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={jetbrainsMono.variable}>
         <Header />
-        <PageTranstion>{children}</PageTranstion>
+        {children}
         <Toaster />
       </body>
     </html>
