@@ -321,6 +321,6 @@ export const info = [
   {
     icon: FaMapMarkedAlt,
     title: "Address",
-    describtion: "Code Corner, Tech Town 13579",
+    describtion: "Markaz Menia El Qamh, Sharkia, Egypt",
   },
 ];

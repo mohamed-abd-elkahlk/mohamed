@@ -14,7 +14,39 @@ import {
 } from "@/components/ui/select";
 import { info } from "@/constants";
 import { motion } from "framer-motion";
+import { useFormState } from "react-dom";
+import { sendEmailServise } from "../action";
+import { useEffect } from "react";
+import { useToast } from "@/components/ui/use-toast";
+import { ToastAction } from "@/components/ui/toast";
 export default function Contact() {
+  const { toast } = useToast();
+
+  const [state, formAction] = useFormState(sendEmailServise, {
+    errors: {
+      email: undefined,
+      f_name: undefined,
+      l_name: undefined,
+      message: undefined,
+      phone: undefined,
+      service: undefined,
+    },
+  });
+  useEffect(() => {
+    if (state?.errors)
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: `your email message can't be sent please fill all input `,
+        action: <ToastAction altText="Try again">Try again</ToastAction>,
+      });
+    else {
+      toast({
+        title: "your messagge has been sent",
+        description: "we will replay as soon as possible",
+      });
+    }
+  }, [state, toast]);
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -27,20 +59,75 @@ export default function Contact() {
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row gap-8">
           <div className="xl:h-[54%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounde-xl">
+            <form
+              className="flex flex-col gap-6 p-10 bg-[#27272c] rounde-xl"
+              action={formAction}
+            >
               <h3 className="text-4xl text-accent">Let's work together</h3>
               <p className="text-white/60">
                 Have a project in mind? Let's build something amazing together.
                 Get in touch!
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="text" placeholder="First name" />
-                <Input type="text" placeholder="Lastname" />
-                <Input type="email" placeholder="Email address" />
-                <Input type="phone" placeholder="Phone number" />
+                <div>
+                  <Input
+                    type="text"
+                    placeholder="First name"
+                    name="f_name"
+                    className={`${
+                      state?.errors.f_name ? "border-red-600" : ""
+                    } w-full`}
+                  />
+                  {state?.errors.f_name && (
+                    <p className="text-red-500">{state?.errors.f_name}</p>
+                  )}
+                </div>
+                <div>
+                  <Input
+                    type="text"
+                    placeholder="Last name"
+                    name="l_name"
+                    className={`${
+                      state?.errors.l_name ? "border-red-600" : ""
+                    } w-full`}
+                  />
+                  {state?.errors.l_name && (
+                    <p className="text-red-500">{state?.errors.l_name}</p>
+                  )}
+                </div>
+                <div>
+                  <Input
+                    type="email"
+                    placeholder="Email address"
+                    name="email"
+                    className={`${
+                      state?.errors.email ? "border-red-600" : ""
+                    } w-full`}
+                  />
+                  {state?.errors.email && (
+                    <p className="text-red-500">{state?.errors.email}</p>
+                  )}
+                </div>
+                <div>
+                  <Input
+                    type="phone"
+                    placeholder="Phone number"
+                    name="phone"
+                    className={`${
+                      state?.errors.phone ? "border-red-600" : ""
+                    } w-full`}
+                  />
+                  {state?.errors.phone && (
+                    <p className="text-red-500">{state?.errors.phone}</p>
+                  )}
+                </div>
               </div>
-              <Select>
-                <SelectTrigger className="w-full">
+              <Select name="service">
+                <SelectTrigger
+                  className={`${
+                    state?.errors.service ? "border-red-600" : ""
+                  } w-full`}
+                >
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
                 <SelectContent>
@@ -52,11 +139,20 @@ export default function Contact() {
                   </SelectGroup>
                 </SelectContent>
               </Select>
+              {state?.errors.service && (
+                <p className="text-red-500">{state?.errors.service}</p>
+              )}
               <Textarea
-                className="h-[200px] "
+                name="message"
+                className={`${
+                  state?.errors.message ? "border-red-600" : ""
+                } w-full h-[200px]`}
                 placeholder="Type Your message here."
               />
-              <Button className="max-w-40" size={"md"}>
+              {state?.errors.message && (
+                <p className="text-red-500">{state?.errors.message}</p>
+              )}
+              <Button className="max-w-40" size={"md"} type="submit">
                 Send message
               </Button>
             </form>
