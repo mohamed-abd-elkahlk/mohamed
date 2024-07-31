@@ -30,8 +30,8 @@ export default function Contact() {
             <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounde-xl">
               <h3 className="text-4xl text-accent">Let's work together</h3>
               <p className="text-white/60">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-                neque laudantium dolor.
+                Have a project in mind? Let's build something amazing together.
+                Get in touch!
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input type="text" placeholder="First name" />
@@ -46,9 +46,9 @@ export default function Contact() {
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="est">Web Development</SelectItem>
-                    <SelectItem value="cst">UI/UX Design</SelectItem>
-                    <SelectItem value="mst">Logo Design</SelectItem>
+                    <SelectItem value="front end">Front End</SelectItem>
+                    <SelectItem value="back end">Back End</SelectItem>
+                    <SelectItem value="freelance">FreeLance</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>

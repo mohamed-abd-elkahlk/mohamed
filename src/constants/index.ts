@@ -1,8 +1,6 @@
 import {
   FaGithub,
   FaLinkedinIn,
-  FaTwitter,
-  FaYoutube,
   FaNodeJs,
   FaFigma,
   FaHtml5,
@@ -12,9 +10,20 @@ import {
   FaPhoneAlt,
   FaEnvelope,
   FaMapMarkedAlt,
+  FaStackOverflow,
+  FaGit,
 } from "react-icons/fa";
 
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+export const cv =
+  "https://drive.google.com/file/d/1ii1xN3NIGcT__YbTDM_eANHpLSERc92Q/view?usp=drive_link";
+
+import {
+  SiTailwindcss,
+  SiNextdotjs,
+  SiTypescript,
+  SiExpress,
+  SiDevexpress,
+} from "react-icons/si";
 export const links = [
   { name: "home", path: "/" },
   { name: "services", path: "/services" },
@@ -22,48 +31,38 @@ export const links = [
   { name: "work", path: "/work" },
   { name: "contact", path: "/contact" },
 ];
-// Todo: add socila links
 export const socials = [
-  { icon: FaGithub, path: "#" },
-  { icon: FaLinkedinIn, path: "#" },
-  { icon: FaYoutube, path: "#" },
-  { icon: FaTwitter, path: "#" },
+  { icon: FaGithub, path: "https://github.com/mohamed-abd-elkahlk" },
+  {
+    icon: FaLinkedinIn,
+    path: "https://www.linkedin.com/in/mohamed-abd-elkhalk-55745026a/",
+  },
+  {
+    icon: FaStackOverflow,
+    path: "https://stackoverflow.com/users/23346660/mohamed-abd-elkhalk",
+  },
 ];
 
 export const status = [
-  { num: 12, text: "Years of experiance" },
+  { num: 2, text: "Years of experiance" },
   { num: 26, text: "Project completed" },
-  { num: 8, text: "Technologies masterd" },
-  { num: 500, text: "Code commits" },
+  { num: 9, text: "Technologies masterd" },
+  { num: 100, text: "Code commits" },
 ];
 
 export const services = [
   {
     num: "01",
-    title: "Web development",
+    title: "Front-End Development",
     descripetion:
-      " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, eum sit atque porro iusto ratione deserunt tenetur.",
+      "Develop high-performance, cross-platform applications using modern frameworks like React, or Next.js.",
     href: "",
   },
   {
     num: "02",
-    title: "UI/UX Design",
+    title: "Back-End Development",
     descripetion:
-      " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, eum sit atque porro iusto ratione deserunt tenetur.",
-    href: "",
-  },
-  {
-    num: "03",
-    title: "Logo Design",
-    descripetion:
-      " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, eum sit atque porro iusto ratione deserunt tenetur.",
-    href: "",
-  },
-  {
-    num: "04",
-    title: "SEO",
-    descripetion:
-      " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, eum sit atque porro iusto ratione deserunt tenetur.",
+      "Build robust and scalable Node.js/Express APIs, integrating databases and third-party services.",
     href: "",
   },
 ];
@@ -71,11 +70,11 @@ export const services = [
 export const about = {
   title: "About me",
   description:
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, eum sit atque porro iusto ratione deserunt tenetur.",
+    "I'm a passionate full-stack web developer with 2 years of experience crafting engaging and user-centric digital experiences. I thrive on turning complex challenges into innovative solutions. Continuously seeking new knowledge, I'm dedicated to delivering exceptional results for every project.",
   info: [
     {
       fildName: "Name",
-      fildValue: "Luka Coleman",
+      fildValue: "Mohamed Abd Elkhalq",
     },
     {
       fildName: "Phone",
@@ -83,11 +82,7 @@ export const about = {
     },
     {
       fildName: "Expreience",
-      fildValue: "+3 Years",
-    },
-    {
-      fildName: "skybe",
-      fildValue: "Luka.01",
+      fildValue: "+2 Years",
     },
     {
       fildName: "Nationality",
@@ -112,39 +107,24 @@ export const education = {
   icon: "/accets/resume/cap.svg",
   title: "My education",
   description:
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, eum sit atque porro iusto ratione deserunt tenetur.",
+    "Bachelor of Education candidate at Zagazig University, Egypt. Developing strong communication and classroom management skills through coursework in educational psychology and teaching methodologies. Actively involved in the university's English Language Club.",
   items: [
     {
-      institution: "Online Course Platform",
-      degree: "Full Stack Web Developer Bootcamp",
+      institution: "Elzero Web School",
+      degree: "Front End Track",
       duration: "2023",
     },
     {
-      institution: "Codecademy",
-      degree: "Front End Track",
+      institution: "SEF Academy",
+      degree: "MERN stack",
       duration: "2022",
-    },
-    {
-      institution: "Tech Inctitute",
-      degree: "Certified Web Developer",
-      duration: "2019",
-    },
-    {
-      institution: "Design School",
-      degree: "Diploma in Graphic Desgin",
-      duration: "2016 - 2018",
-    },
-    {
-      institution: "Community College",
-      degree: "Associate Degree in Computer Science",
-      duration: "2014 - 2016",
     },
   ],
 };
 export const skills = {
   title: "My skills",
   description:
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, eum sit atque porro iusto ratione deserunt tenetur.",
+    "Strong communication and interpersonal skills,i have a effective verbal and written communication skills, Critical thinking and problem-solving abilities, Efficiently organizing and managing tasks, Flexibility and openness to new ideas and approaches and collaborating effectively with others.",
   skillList: [
     {
       icon: FaHtml5,
@@ -157,6 +137,10 @@ export const skills = {
     {
       icon: FaJs,
       name: "javascript",
+    },
+    {
+      icon: SiTypescript,
+      name: "typescript",
     },
     {
       icon: FaReact,
@@ -174,10 +158,6 @@ export const skills = {
       icon: FaNodeJs,
       name: "node.js",
     },
-    {
-      icon: FaFigma,
-      name: "figma",
-    },
   ],
 };
 
@@ -185,7 +165,7 @@ export const experiance = {
   icon: "/accets/resume/bage.svg",
   title: "My expreience",
   description:
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, eum sit atque porro iusto ratione deserunt tenetur.",
+    "I'm a passionate full-stack web developer with 2 years of experience crafting engaging and user-centric digital experiences. I thrive on turning complex challenges into innovative solutions. Continuously seeking new knowledge, I'm dedicated to delivering exceptional results for every project.",
   items: [
     {
       company: "Tech Soultions Inc.",
@@ -224,35 +204,106 @@ export const projects = [
   {
     num: "01",
     category: "fronted",
-    title: "project 1",
+    title: "Nike App",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, aliquam explicabo.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javasctipt" }],
+      "Nike app is a front end web app built with the most used framework in web industry, the app is fully responsive and user friendly",
+    stack: [{ name: "React" }, { name: "Vite" }, { name: "TailWind Css" }],
     image: "/assets/work/thumb1.png",
-    live: "",
-    github: "",
+    live: "https://nike-website.netlify.app/",
+    github: "https://github.com/mohamed-abd-elkahlk/nike-app",
   },
   {
     num: "02",
-    category: "fullstack",
-    title: "project 2",
+    category: "fronted",
+    title: "Basic Portfolio",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, aliquam explicabo.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind Css" }, { name: "Node.js" }],
+      "this app is fully responsive and user friendly and you can put your project and past experience on it",
+    stack: [{ name: "React" }, { name: "Vite," }, { name: "TailWind Css" }],
     image: "/assets/work/thumb2.png",
-    live: "",
-    github: "",
+    live: "https://tubular-faloodeh-274d48.netlify.app/",
+    github: "https://github.com/mohamed-abd-elkahlk/portfoluo-templete-1",
   },
   {
     num: "03",
-    category: "fronted",
-    title: "project 3",
+    category: "full stack ",
+    title: "Snapgram",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, aliquam explicabo.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind Css" }],
+      "Snapgram is a modern social app with a stunning UI with a native mobile feel, a special tech stack, an infinite scroll feature, and amazing performance using React JS, Appwrite, TypeScript, and more.",
+    stack: [
+      { name: "React.js" },
+      { name: "TypeScript" },
+      { name: "Tailwind Css" },
+      { name: "Appwrite" },
+      { name: "Shadcn/UI " },
+    ],
     image: "/assets/work/thumb3.png",
-    live: "",
-    github: "",
+    live: "https://snapgram-a.netlify.app/",
+    github: "https://github.com/mohamed-abd-elkahlk/snapgram",
+  },
+
+  {
+    num: "04",
+    category: "full stack ",
+    title: "Live Docs",
+    description:
+      "Live Docs is a collaborative application, an improved Google Docs that manages millions of collaborators in real-time.",
+    stack: [
+      { name: "Next.js" },
+      { name: "TypeScript" },
+      { name: "Tailwind Css" },
+      { name: "Shadcn/UI " },
+    ],
+    image: "/assets/work/thumb4.png",
+    live: "https://live-docs-six.vercel.app/",
+    github: "https://github.com/mohamed-abd-elkahlk/live-docs",
+  },
+  {
+    num: "05",
+    category: "full stack ",
+    title: "Carepulse",
+    description:
+      "Carepulse app built with nextjs, this a healthcare platform that streamlines patient registration, appointment scheduling, and medical record",
+    stack: [
+      { name: "Next.js" },
+      { name: "Appwrite" },
+      { name: "TypeScript" },
+      { name: "Tailwind Css" },
+      { name: "Shadcn/UI " },
+    ],
+    image: "/assets/work/thumb5.png",
+    live: "https://carepulse-ten.vercel.app/",
+    github: "https://github.com/mohamed-abd-elkahlk/carepulse",
+  },
+  {
+    num: "06",
+    category: "full stack ",
+    title: "Promptopia,",
+    description:
+      "Promptopia is an open-source AI prompting tool for modern world to discover create and share creative prompts",
+    stack: [
+      { name: "Next.js" },
+      { name: "TypeScript" },
+      { name: "Tailwind Css" },
+      { name: "Mongodb" },
+    ],
+    image: "/assets/work/thumb6.png",
+    live: "https://promtopia-jsm.vercel.app/",
+    github: "https://github.com/mohamed-abd-elkahlk/promtopia_jsm",
+  },
+  {
+    num: "07",
+    category: "full stack ",
+    title: "Hilink,",
+    description:
+      "this app is a feature-rich travel app with Next.js 14 and Tailwind CSS, covering everything from a sleek UI to mobile-first best practices.",
+    stack: [
+      { name: "Next.js" },
+      { name: "TypeScript" },
+      { name: "Tailwind Css" },
+    ],
+    image: "/assets/work/thumb7.png",
+    live: "https://travel-app-indol-psi.vercel.app/",
+    github: "https://github.com/mohamed-abd-elkahlk/travel-app",
   },
 ];
 
@@ -265,7 +316,7 @@ export const info = [
   {
     icon: FaEnvelope,
     title: "Email",
-    describtion: "username@domin.com",
+    describtion: "matrixhc00@gmail.com",
   },
   {
     icon: FaMapMarkedAlt,

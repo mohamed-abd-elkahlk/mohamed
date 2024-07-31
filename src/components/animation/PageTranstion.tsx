@@ -9,7 +9,7 @@ export default function PageTranstion({
   const path = usePathname();
   return (
     <AnimatePresence>
-      <div className="" key={path}>
+      <div className="">
         <motion.div
           initial={{ opacity: 1 }}
           animate={{

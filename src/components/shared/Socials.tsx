@@ -11,7 +11,12 @@ export default function Socials({
   return (
     <div className={containerStyle}>
       {socials.map((item, index) => (
-        <Link key={index} href={item.path} className={iconStyle}>
+        <Link
+          key={index}
+          href={item.path}
+          className={iconStyle}
+          target="_blank"
+        >
           <item.icon />
         </Link>
       ))}

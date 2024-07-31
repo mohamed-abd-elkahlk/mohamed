@@ -51,7 +51,7 @@ export default function Work() {
               </ul>
               <div className="border border-white/20" />
               <div className="flex gap-4 items-center">
-                <Link href={project.live}>
+                <Link href={project.live} target="_blank">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -64,7 +64,7 @@ export default function Work() {
                   </TooltipProvider>
                 </Link>
 
-                <Link href={project.github}>
+                <Link href={project.github} target="_blank">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -96,7 +96,7 @@ export default function Work() {
                         alt="projet-image"
                         src={item.image}
                         fill
-                        className="object-cover"
+                        className="object-fill"
                       />
                     </div>
                   </div>
